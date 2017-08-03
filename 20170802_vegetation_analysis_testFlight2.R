@@ -47,14 +47,14 @@ clip_processed <- data.frame(clip, net_weight_grams = net_weight,
 #Show average height and biomass by color type
 #Sum loading for each category
 summary_statistics <- ddply(clip_processed, "image_color_category", summarise, 
-                         average_loading = mean(net_weight_grams, na.rm = T),
-                         SD_loading = sd(net_weight_grams, na.rm = T),
-                         min_moading = min(net_weight_grams, na.rm = T),
-                         max_loading = max(net_weight_grams, na.rm = T), 
-                         average_height = mean(vegetation_height_cm, na.rm = T),
-                         SD_height = sd(vegetation_height_cm, na.rm = T),
-                         min_height = min(vegetation_height_cm, na.rm = T),
-                         max_height = max(vegetation_height_cm, na.rm = T))
+                         average_loading = round(mean(net_weight_grams, na.rm = T),2),
+                         SD_loading = round(sd(net_weight_grams, na.rm = T),2),
+                         min_moading = round(min(net_weight_grams, na.rm = T),2),
+                         max_loading = round(max(net_weight_grams, na.rm = T),2), 
+                         average_height = round(mean(vegetation_height_cm, na.rm = T),2),
+                         SD_height = round(sd(vegetation_height_cm, na.rm = T),2),
+                         min_height = round(min(vegetation_height_cm, na.rm = T),2),
+                         max_height = round(max(vegetation_height_cm, na.rm = T),2))
 
 ##########----------GREEN
 ##########
